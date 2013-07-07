@@ -105,3 +105,8 @@
     text-align: center;
     margin-bottom:50px;
 }
+
+#mouse-wheel-direction-container input
+{
+    margin-right:10px;
+}

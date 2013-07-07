@@ -45,6 +45,10 @@
                 <input type="text" class="input-mini" value="100" id="mouse-wheel-speed-control"/>
                 <span>ms</span>
             </div>
+            <div id="mouse-wheel-direction-container">
+                <input type="checkbox" id="mouse-wheel-inverse-direction"/>
+                <span>Inverse Mouse Wheel Direction</span>
+            </div>
         </div>
         <div class="span4">&nbsp;</div>
     </div>
@@ -89,11 +93,13 @@
 
         var enableMouseWheelViewNavigation = $('#mouse-wheel-enable').is(":checked"),
             mouseWheelViewNavigationDelay = $("#mouse-wheel-speed-control").val() || 100,
+            inverseDirection = $('#mouse-wheel-inverse-direction').is(":checked"),
             options = {
 
                 viewSelect: 4,
                 wheelViewModeNavigation: enableMouseWheelViewNavigation,
-                wheelViewModeNavigationDelay: mouseWheelViewNavigationDelay
+                wheelViewModeNavigationDelay: mouseWheelViewNavigationDelay,
+                wheelViewModeNavigationInverseDirection: inverseDirection
 
             };
 
@@ -153,6 +159,16 @@
 
         renderDatetimePickers();
 
+    });
+
+    $("#mouse-wheel-inverse-direction").on('change',function(){
+
+       renderDatetimePickers();
+    });
+
+    $("#mouse-wheel-direction-container").tooltip({
+        html:true,
+        title:"Default direction is scroll up to the decade view."
     });
 
     $("#mouse-wheel-speed-control").on('change',function(){
