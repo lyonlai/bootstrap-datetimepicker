@@ -132,7 +132,7 @@
 							.appendTo(this.isInline ? this.element : 'body')
 							.on({
 								click: $.proxy(this.click, this),
-                                mousedown: $.proxy(this.mousedown, this)
+								mousedown: $.proxy(this.mousedown, this)
 							});
 
         if(this.wheelViewModeNavigation)
@@ -177,7 +177,7 @@
 			this.keyboardNavigation = this.element.data('date-keyboard-navigation');
 		}
 
-        this.todayBtn = (options.todayBtn || this.element.data('date-today-btn') || false);
+		this.todayBtn = (options.todayBtn || this.element.data('date-today-btn') || false);
 		this.todayHighlight = (options.todayHighlight || this.element.data('date-today-highlight') || false);
 
 		this.weekStart = ((options.weekStart || this.element.data('date-weekstart') || dates[this.language].weekStart || 0) % 7);
